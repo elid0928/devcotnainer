@@ -4,6 +4,10 @@ DevContainer 是一种用于开发环境的容器化解决方案，它通过定�
 
 标签：#开发环境 #容器化 #VSCode
 
+[Template合集](https://containers.dev/templates)
+[特性合集](https://containers.dev/features)
+
+
 #### go 语言开发环境配置
 [go devcontainer](./go/devcontainer.json)  
-[go-postgres devcontainer](./go-postgres/devcontainer.json)
+[go-postgres devcontainer](./go/go-postgres/.devcontainer/devcontainer.json)
