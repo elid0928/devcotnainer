@@ -1,0 +1,45 @@
+{
+	"name": "Go Development Environment",
+	"image": "mcr.microsoft.com/devcontainers/go:1-1.22-bookworm",
+	// "image": "./Dockerfile",
+	// "build": {
+	// 	"dockerfile": "Dockerfile"
+	// },
+	// 添加到开发容器的功能。更多信息：https://containers.dev/features。
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"go.gopath": "/go",
+				"go.toolsGopath": "/go",
+				"go.useLanguageServer": true,
+				"go.lintTool": "golangci-lint",
+				"editor.formatOnSave": true,
+				"workbench.iconTheme": "material-icon-theme"
+				// "python.venvPath": "/venv/azure/bin"
+			},
+			"extensions": [
+				"golang.go",
+				"ms-azuretools.vscode-docker",
+				"filikos.awesome-go-vscode",
+				"ms-python.python",
+				"formulahendry.code-runner",
+				"mhutchie.git-graph",
+				"github.copilot",
+				"github.copilot-chat",
+				"github.vscode-pull-request-github",
+				"premparihar.gotestexplorer",
+				"euskadi31.json-pretty-printer",
+				"pkief.material-icon-theme"
+			]
+		}
+	},
+	"forwardPorts": [
+		8080
+	],
+	"postCreateCommand": " sudo apt update -y && sudo apt install python3-pip -y && go mod tidy",
+	"remoteUser": "vscode",
+	"runArgs": [
+		"--env-file",
+		".devcontainer/.env"
+	]
+}
